@@ -1,44 +1,68 @@
 ---
-title: "Automating Design Handovers with a Figma to Code Pipeline"
-publishedAt: "2024-04-01"
-summary: "Explore the enduring debate between using spaces and tabs for code indentation, and why this choice matters more than you might think."
+title: "Skill Spell"
+publishedAt: "2025-04-01"
+summary: "An AI-powered personalized learning platform with adaptive roadmaps, assessments, and a context-aware chatbot."
 images:
+  - "/images/projects/project-01/cover-01.jpg"
   - "/images/projects/project-01/cover-02.jpg"
-  - "/images/projects/project-01/image-03.jpg"
 team:
-  - name: "John Doe"
-    role: "Software Engineer"
+  - name: "Dhwani Bhut"
+    role: "AI Engineer & Full-Stack Developer"
     avatar: "/images/avatar.jpg"
-    linkedIn: "https://www.linkedin.com/company/once-ui/"
-link: "https://once-ui.com/"
+    linkedIn: "https://linkedin.com/in/dhwani-bhut"
+link: "https://your-demo-link"
 ---
 
 ## Overview
 
-In this project, I focused on automating the often tedious design handover process. The goal was to create a pipeline that converts Figma designs directly into clean, production-ready code. By integrating design tokens, component libraries, and automated workflows, this solution significantly reduced the time spent on translating design assets into code, while maintaining design consistency across the product.
+Skill Spell is an AI-driven learning platform designed to provide **personalized learning
+roadmaps, adaptive assessments, and intelligent educational assistance** tailored to
+individual learners.
+
+The platform focuses on reducing friction in self-learning by dynamically curating
+resources, answering contextual queries, and adapting content based on user progress.
 
 ## Key Features
 
-- **Figma Plugin Integration**: Developed a custom Figma plugin that extracts design tokens such as colors, typography, and spacing values, and exports them in a format compatible with our codebase.
-- **Code Generation**: Integrated an automated process that translates Figma components into React code using a combination of design tokens and pre-built component templates. This allowed developers to focus more on logic and less on repetitive UI coding.
-- **Continuous Sync**: Established a CI/CD pipeline that continuously synchronizes design changes from Figma to the codebase, ensuring design updates are reflected instantly without manual intervention.
-- **Scalable Design System**: Leveraged a design system that remains the single source of truth for both designers and developers, making it easy to maintain consistency even as the product evolves.
+- **Personalized Learning Roadmaps**  
+  Designed a custom roadmap generator that creates structured learning paths with curated
+  resources such as articles, books, and lectures.
+
+- **Context-Aware AI Chatbot (RAG)**  
+  Implemented a Retrieval Augmented Generation system enabling users to:
+  - Ask concept-level questions  
+  - Generate summaries of YouTube videos (via Whisper.cpp)  
+  - Query uploaded documents using OCR and vector search (ChromaDB)
+
+- **Real-Time Knowledge Retrieval**  
+  Integrated dynamic web scraping using Crawl4AI and a self-hosted XNG browser to fetch
+  up-to-date learning content.
+
+- **Secure, Modular Deployment**  
+  Deployed microservices in isolated Docker containers to ensure scalability, security,
+  and clean separation of concerns.
 
 ## Technologies Used
 
-- **Figma API**: For extracting design tokens and component data directly from the Figma designs.
-- **React and Next.js**: For building the front-end codebase with clean, reusable components.
-- **Styled-Components**: For managing styles dynamically using design tokens.
-- **GitHub Actions**: For automating the pipeline and syncing design changes to the repository.
+- **AI / ML**: TensorFlow, LangChain, OpenAI, Ollama  
+- **Data & Retrieval**: ChromaDB, OCR pipelines  
+- **Frontend**: Streamlit  
+- **Infrastructure**: Docker, self-hosted browser services  
+- **Speech & Media**: Whisper.cpp
 
-## Challenges and Learnings
+## Context
 
-One of the biggest challenges was ensuring that the generated code was clean and maintainable. This involved setting up intelligent mapping between Figma components and React code structures, as well as managing edge cases like responsive design and conditional rendering. Additionally, the continuous synchronization required a robust error-handling system to prevent conflicts during development.
+Skill Spell was built during **HackSpire**, a 24-hour hackathon organized by ASPDC at  
+Adani University, Ahmedabad.
 
 ## Outcome
 
-The automated Figma to code pipeline has streamlined the handoff process, cutting down design-to-development time by 40%. Designers now have more confidence that their designs will be accurately translated into code, and developers can focus on more complex logic and feature development. This project has proven the value of automation in bridging the gap between design and development.
+The project demonstrated how AI-driven personalization and retrieval systems can
+significantly improve the learning experience. Skill Spell highlights strong capabilities
+in **LLM integration, prompt engineering, system design, and rapid prototyping under
+time constraints**.
 
----
+## Links
 
-This project demonstrates your ability to leverage automation and streamline workflows, which is highly relevant for design engineering portfolios focused on efficiency and innovation.
+- [Demo Video](https://your-demo-link)
+- [Source Code](https://github.com/your-repo)
