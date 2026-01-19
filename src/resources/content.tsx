@@ -1,18 +1,5 @@
-import {
-  About,
-  Blog,
-  Gallery,
-  Home,
-  Newsletter,
-  Person,
-  Social,
-  Work,
-} from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
-
-/* =====================================================
-   PERSON
-===================================================== */
 
 const person: Person = {
   firstName: "Dhwani",
@@ -25,17 +12,11 @@ const person: Person = {
   languages: ["English", "Hindi", "Gujarati"],
 };
 
-/* =====================================================
-   NEWSLETTER (DISABLED FOR NOW)
-===================================================== */
-
 const newsletter: Newsletter = {
-  display: false,
+  display: true,
+  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  description: <>Occasional writing on AI, NLP, and engineering projects</>,
 };
-
-/* =====================================================
-   SOCIAL LINKS
-===================================================== */
 
 const social: Social = [
   {
@@ -58,43 +39,42 @@ const social: Social = [
   },
 ];
 
-/* =====================================================
-   HOME
-===================================================== */
-
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: "Dhwani Bhut — Portfolio",
-  description:
-    "Computer Science Engineering student focused on AI, NLP, research, and building meaningful systems.",
-
-  headline: <>Hi, I’m Dhwani Bhut</>,
-
+  title: `${person.name}'s Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  headline: <>Building bridges between research and code</>,
+  featured: {
+    display: true,
+    title: (
+      <Row gap="12" vertical="center">
+        <strong className="ml-4">Research & Projects</strong>
+        <Line background="brand-alpha-strong" vert height="20" />
+        <Text marginRight="4" onBackground="brand-medium">
+          Featured work
+        </Text>
+      </Row>
+    ),
+    href: "/work",
+  },
   subline: (
     <>
-      Computer Science Engineering student with a strong interest in
-      <Text as="span" weight="strong"> AI, NLP, and research</Text>.
-      <br />
-      I enjoy building technically sound systems and learning through projects.
+      I'm Dhwani, a Computer Science Engineering student with a strong interest in{" "}
+      <Text as="span" size="xl" weight="strong">
+        AI, NLP, and research
+      </Text>
+      . I enjoy building thoughtful, technically sound systems through projects.
     </>
   ),
-
-  featured: {
-    display: false,
-  },
 };
-
-/* =====================================================
-   ABOUT
-===================================================== */
 
 const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `About ${person.name}, ${person.role}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -102,42 +82,37 @@ const about: About = {
   avatar: {
     display: true,
   },
-
+  calendar: {
+    display: true,
+    link: "https://cal.com",
+  },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        I am a Computer Science Engineering undergraduate with a strong academic
-        foundation and a growing interest in artificial intelligence, natural
-        language processing, and research-oriented development.
-        <br /><br />
-        I enjoy working on problems that require both conceptual clarity and
-        technical depth, especially in the areas of NLP, databases, and system
-        design.
+        Dhwani is a Computer Science Engineering undergraduate with interests in artificial
+        intelligence, natural language processing, and research-driven development. She enjoys
+        exploring problems that combine theoretical understanding with practical implementation.
       </>
     ),
   },
-
   work: {
     display: true,
-    title: "Research & Experience",
+    title: "Experience & Research",
     experiences: [
       {
         company: "IIT Hyderabad",
-        timeframe: "May 2025 – Jun 2025",
-        role: "Early Research Intern (SURE Program)",
+        timeframe: "2025",
+        role: "Research Intern",
         achievements: [
-          <>Collected and curated large-scale Gujarati text corpora from multiple sources.</>,
-          <>Designed and implemented an NLP preprocessing pipeline for low-resource language data.</>,
-          <>Pretrained and fine-tuned transformer-based models on Gujarati text.</>,
-          <>Evaluated models on downstream tasks such as QA and translation.</>,
+          <>Worked on NLP and language-related research tasks.</>,
+          <>Built preprocessing pipelines and experimented with model training.</>,
         ],
         images: [],
       },
     ],
   },
-
   studies: {
     display: true,
     title: "Education",
@@ -148,38 +123,25 @@ const about: About = {
       },
     ],
   },
-
   technical: {
     display: true,
-    title: "Technical Skills",
+    title: "Technical skills",
     skills: [
       {
-        title: "Artificial Intelligence & NLP",
-        description: (
-          <>
-            Experience with NLP pipelines, transformer-based models,
-            fine-tuning strategies, and retrieval-augmented generation.
-          </>
-        ),
+        title: "Programming & CS Fundamentals",
+        description: <>Strong foundation in Python, SQL, and core computer science concepts.</>,
         tags: [
-          { name: "NLP", icon: "brain" },
-          { name: "LLMs", icon: "sparkles" },
-          { name: "PyTorch", icon: "pytorch" },
+          { name: "Python", icon: "python" },
+          { name: "SQL", icon: "database" },
         ],
         images: [],
       },
       {
-        title: "Backend & Databases",
-        description: (
-          <>
-            Strong understanding of relational databases, SQL design,
-            APIs, and backend system architecture.
-          </>
-        ),
+        title: "AI & NLP",
+        description: <>Experience working with NLP pipelines, data preprocessing, and ML models.</>,
         tags: [
-          { name: "SQL", icon: "database" },
-          { name: "FastAPI", icon: "api" },
-          { name: "PostgreSQL", icon: "database" },
+          { name: "NLP", icon: "brain" },
+          { name: "Machine Learning", icon: "sparkles" },
         ],
         images: [],
       },
@@ -187,51 +149,26 @@ const about: About = {
   },
 };
 
-/* =====================================================
-   BLOG
-===================================================== */
-
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing on AI, systems, and learning",
-  description: `Posts by ${person.name} on research and engineering`,
+  title: "Writing about AI, systems, and learning",
+  description: `Read what ${person.name} has been exploring recently`,
 };
-
-/* =====================================================
-   WORK (PROJECTS LIST PAGE)
-===================================================== */
 
 const work: Work = {
   path: "/work",
-  label: "Projects",
+  label: "Work",
   title: `Projects – ${person.name}`,
-  description: "Selected academic and technical projects",
+  description: `Academic, research, and technical projects`,
 };
-
-/* =====================================================
-   GALLERY (OPTIONAL, EMPTY)
-===================================================== */
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Gallery – ${person.name}`,
-  description: "Moments beyond code",
+  title: `Photo gallery – ${person.name}`,
+  description: `A small collection beyond code`,
   images: [],
 };
 
-/* =====================================================
-   EXPORTS
-===================================================== */
-
-export {
-  person,
-  social,
-  newsletter,
-  home,
-  about,
-  blog,
-  work,
-  gallery,
-};
+export { person, social, newsletter, home, about, blog, work, gallery };
