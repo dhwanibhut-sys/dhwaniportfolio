@@ -2,7 +2,7 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 /* =======================
-   PERSON
+   
 ======================= */
 
 const person: Person = {
