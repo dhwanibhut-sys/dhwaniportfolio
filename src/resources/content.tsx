@@ -45,7 +45,8 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between research and code</>,
+  headline: <>Computer Science student building intelligent systems with AI and NLP</>,
+
   featured: {
     display: true,
     title: (
