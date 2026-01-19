@@ -1,49 +1,46 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
+/* =======================
+   PERSON
+======================= */
+
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Dhwani",
+  lastName: "Bhut",
+  name: "Dhwani Bhut",
+  role: "Computer Science Engineering Student",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "dhwanibhut6@gmail.com",
+  location: "Asia/Kolkata",
+  languages: ["English", "Hindi", "Gujarati"],
 };
+
+/* =======================
+   NEWSLETTER (OPTIONAL)
+======================= */
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false, // keep off for now (can enable later)
+  title: <>Subscribe to Dhwani’s Newsletter</>,
+  description: <>Occasional writing on AI, NLP, and engineering projects</>,
 };
 
+/* =======================
+   SOCIAL LINKS
+======================= */
+
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/dhwanibhut-sys",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://linkedin.com/in/dhwani-bhut",
     essential: true,
   },
   {
@@ -54,38 +51,43 @@ const social: Social = [
   },
 ];
 
+/* =======================
+   HOME
+======================= */
+
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
-  featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
-  },
+  title: "Dhwani Bhut — Portfolio",
+  description:
+    "Computer Science Engineering student focused on AI, NLP, research, and building scalable, meaningful digital systems.",
+
+  headline: <>Hi, I’m Dhwani Bhut</>,
+
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Computer Science Engineering student with a strong focus on
+      <Text as="span" size="xl" weight="strong"> AI, NLP, and research</Text>.
+      <br />
+      I enjoy building technically rigorous systems that solve real problems.
+    </>
   ),
+
+  featured: {
+    display: false,
+  },
 };
+
+/* =======================
+   ABOUT
+======================= */
 
 const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `About ${person.name}, ${person.role} based in India`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -93,212 +95,129 @@ const about: About = {
   avatar: {
     display: true,
   },
-  calendar: {
-    display: true,
-    link: "https://cal.com",
-  },
+
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a Computer Science Engineering undergraduate at Pandit Deendayal
+        Energy University with a strong academic foundation and a deep interest
+        in artificial intelligence, natural language processing, and research-driven
+        systems.
+        <br /><br />
+        My work spans NLP research, large language models, database systems,
+        cryptography visualizations, and full-stack engineering. I enjoy diving
+        deep into problem formulation, system design, and experimentation.
       </>
     ),
   },
+
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Research & Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "IIT Hyderabad",
+        timeframe: "May 2025 – Jun 2025",
+        role: "Early Research Intern (SURE Program)",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <>Collected and preprocessed a large multi-source Gujarati text corpus from Wikipedia, news, and Indic datasets.</>,
+          <>Built a custom NLP preprocessing pipeline focusing on normalization, cleaning, and deduplication.</>,
+          <>Pretrained and fine-tuned transformer-based language models on Gujarati text.</>,
+          <>Evaluated models on Gujarati QA and translation tasks and documented experimental results.</>,
         ],
         images: [],
       },
     ],
   },
+
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Pandit Deendayal Energy University",
+        description: <>B.Tech in Computer Science and Engineering (CPI: 9.34/10)</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Mount Carmel High School",
+        description: <>Gujarat Board – Higher Secondary (92.56%)</>,
       },
     ],
   },
+
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "AI & Machine Learning",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Experience with NLP, LLMs, fine-tuning, RAG pipelines, and classical ML
+            algorithms across research and production-oriented projects.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "NLP", icon: "brain" },
+          { name: "LLMs", icon: "sparkles" },
+          { name: "PyTorch", icon: "pytorch" },
+          { name: "TensorFlow", icon: "tensorflow" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Systems & Backend",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Strong foundation in databases, APIs, and backend system design with
+            experience in SQL, FastAPI, PostgreSQL, and Docker.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "SQL", icon: "database" },
+          { name: "FastAPI", icon: "api" },
+          { name: "Docker", icon: "docker" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
 };
+
+/* =======================
+   BLOG
+======================= */
 
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Writing on AI, systems, and learning",
+  description: `Occasional writing by ${person.name} on research and engineering`,
 };
+
+/* =======================
+   WORK
+======================= */
 
 const work: Work = {
   path: "/work",
-  label: "Work",
+  label: "Projects",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Selected technical and research projects`,
 };
+
+/* =======================
+   GALLERY (OPTIONAL)
+======================= */
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  title: `Gallery – ${person.name}`,
+  description: `Moments beyond code`,
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
