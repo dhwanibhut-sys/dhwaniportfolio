@@ -1,0 +1,33 @@
+---
+title: Skill Spell
+description: AI-powered personalized learning platform
+date: 2025-04-01
+tags: ["AI", "NLP", "LLM", "RAG"]
+---
+
+## Overview
+
+Skill Spell is an AI-driven learning platform that delivers personalized learning
+roadmaps, adaptive assessments, and context-aware assistance for learners.
+
+## What I Built
+
+- Custom roadmap generator with curated resources (links, books, lectures)
+- Context-aware chatbot using Retrieval Augmented Generation (RAG)
+- YouTube video summarization using Whisper.cpp
+- OCR-based document understanding with vector search (ChromaDB)
+
+## Tech Stack
+
+- TensorFlow
+- LangChain
+- OpenAI
+- Ollama
+- ChromaDB
+- Streamlit
+- Docker
+
+## Links
+
+- [Demo Video](https://your-demo-link)
+- [Source Code](https://github.com/your-repo)
