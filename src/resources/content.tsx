@@ -1,6 +1,8 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
+/* ===================== PERSON ===================== */
+
 const person: Person = {
   firstName: "Dhwani",
   lastName: "Bhut",
@@ -12,11 +14,13 @@ const person: Person = {
   languages: ["English", "Hindi", "Gujarati"],
 };
 
+/* ===================== NEWSLETTER ===================== */
+
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>Occasional writing on AI, NLP, and engineering projects</>,
+  display: false,
 };
+
+/* ===================== SOCIAL ===================== */
 
 const social: Social = [
   {
@@ -39,6 +43,8 @@ const social: Social = [
   },
 ];
 
+/* ===================== HOME ===================== */
+
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
@@ -46,12 +52,11 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Computer Science student building intelligent systems with AI and NLP</>,
-
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Research & Projects</strong>
+        <strong className="ml-4">Projects</strong>
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -62,14 +67,16 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Dhwani, a Computer Science Engineering student with a strong interest in{" "}
+      I'm Dhwani, a Computer Science Engineering student interested in{" "}
       <Text as="span" size="xl" weight="strong">
-        AI, NLP, and research
+        AI, NLP, and system design
       </Text>
-      . I enjoy building thoughtful, technically sound systems through projects.
+      . I enjoy building impactful projects through research and engineering.
     </>
   ),
 };
+
+/* ===================== ABOUT ===================== */
 
 const about: About = {
   path: "/about",
@@ -83,93 +90,122 @@ const about: About = {
   avatar: {
     display: true,
   },
-  calendar: {
-    display: true,
-    link: "https://cal.com",
-  },
+
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Dhwani is a Computer Science Engineering undergraduate with interests in artificial
-        intelligence, natural language processing, and research-driven development. She enjoys
-        exploring problems that combine theoretical understanding with practical implementation.
+        I am a Computer Science Engineering undergraduate with strong interests in
+        artificial intelligence, natural language processing, and research-oriented
+        development. I enjoy working on problems that require both conceptual depth
+        and practical execution.
       </>
     ),
   },
+
+  /* -------- EXPERIENCE (IIT H ONLY) -------- */
+
   work: {
     display: true,
-    title: "Experience & Research",
+    title: "Experience",
     experiences: [
       {
         company: "IIT Hyderabad",
-        timeframe: "2025",
-        role: "Research Intern",
+        timeframe: "Summer 2025",
+        role: "Research Intern (NLP)",
         achievements: [
-          <>Worked on NLP and language-related research tasks.</>,
-          <>Built preprocessing pipelines and experimented with model training.</>,
+          <>Worked on NLP-focused research involving language processing and model experimentation.</>,
+          <>Built preprocessing pipelines and evaluated transformer-based approaches.</>,
         ],
         images: [],
       },
     ],
   },
+
+  /* -------- EDUCATION + CERTIFICATIONS -------- */
+
   studies: {
     display: true,
-    title: "Education",
+    title: "Education & Achievements",
     institutions: [
       {
         name: "Pandit Deendayal Energy University",
         description: <>B.Tech in Computer Science and Engineering</>,
       },
+      {
+        name: "Hackathons",
+        description: <>HackSpire (ASPDC, Adani University) · Tic-Tech-Toe’25 (IEEE DAIICT)</>,
+      },
+      {
+        name: "Records & Recognition",
+        description: <>Guinness World Record · London Book of Records</>,
+      },
+      {
+        name: "Rural Internship",
+        description: <>Field-based internship focused on real-world problem solving</>,
+      },
     ],
   },
+
+  /* -------- TECH SKILLS -------- */
+
   technical: {
     display: true,
-    title: "Technical skills",
+    title: "Technical Skills",
     skills: [
       {
-        title: "Programming & CS Fundamentals",
-        description: <>Strong foundation in Python, SQL, and core computer science concepts.</>,
+        title: "AI & NLP",
+        description: <>LLMs, RAG pipelines, prompt engineering, OCR, and ML workflows.</>,
         tags: [
-          { name: "Python", icon: "python" },
-          { name: "SQL", icon: "database" },
+          { name: "NLP", icon: "brain" },
+          { name: "LLMs", icon: "sparkles" },
+          { name: "TensorFlow", icon: "tensorflow" },
         ],
         images: [],
       },
       {
-        title: "AI & NLP",
-        description: <>Experience working with NLP pipelines, data preprocessing, and ML models.</>,
+        title: "Backend & Systems",
+        description: <>APIs, databases, pipelines, and scalable backend systems.</>,
         tags: [
-          { name: "NLP", icon: "brain" },
-          { name: "Machine Learning", icon: "sparkles" },
+          { name: "FastAPI", icon: "api" },
+          { name: "PostgreSQL", icon: "database" },
+          { name: "Docker", icon: "docker" },
         ],
         images: [],
       },
     ],
   },
 };
+
+/* ===================== PROJECTS PAGE ===================== */
+
+const work: Work = {
+  path: "/work",
+  label: "Projects",
+  title: `Projects – ${person.name}`,
+  description: "Selected technical and research projects",
+};
+
+/* ===================== BLOG ===================== */
 
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about AI, systems, and learning",
-  description: `Read what ${person.name} has been exploring recently`,
+  title: "Writing about AI and systems",
+  description: `Thoughts and learnings by ${person.name}`,
 };
 
-const work: Work = {
-  path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Academic, research, and technical projects`,
-};
+/* ===================== GALLERY ===================== */
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A small collection beyond code`,
+  title: `Gallery – ${person.name}`,
+  description: "Beyond code",
   images: [],
 };
+
+/* ===================== EXPORTS ===================== */
 
 export { person, social, newsletter, home, about, blog, work, gallery };
